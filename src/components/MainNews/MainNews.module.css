@@ -81,14 +81,9 @@
     }  
 }
 
-@media (max-width: 425px){
-    .MainNews{
-        padding-top: 20px;
-        margin-bottom: 15px;
-    }
-    .MainNews h1 {
-        font-size: 32px;
-    }
+
+
+@media (max-width: 550px){
     .newsWrap{
         flex-direction: column;
         align-items: center;
@@ -106,6 +101,17 @@
     .news p{
         font-size: 14px;
     }
+}
+
+@media (max-width: 425px){
+    .MainNews{
+        padding-top: 20px;
+        margin-bottom: 15px;
+    }
+    .MainNews h1 {
+        font-size: 32px;
+    }
+    
     .news div{
         margin-bottom: 25px;
     } 
