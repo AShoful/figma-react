@@ -1,0 +1,88 @@
+.MainAboutCompany{
+    background-color: #F7F5FD;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 17%;
+}
+.logoWrap{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.logo{
+    background: url('../../img/png/logo.png') no-repeat center;
+    width: 100%;
+    height: 115px;
+    background-size: 100%;
+    padding: 12px 0;
+ }
+ .about{
+    width: 36%;
+ }
+
+ .about h1{
+    font-size: 48px;
+    line-height: 1.15;
+    color: #3F3E3E;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.about p{
+    font-size: 18px;
+    line-height: 1.15;
+    text-align: justify;
+    color: #828282;
+
+}
+
+@media (max-width: 1440px){
+    .logoWrap{
+        width: 45%;
+    }
+    .about{
+        width: 45%
+    }
+}
+
+@media (max-width: 1024px){
+    .MainAboutCompany{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .logoWrap{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .about{
+        width: 100%
+    }
+    .about h1{
+        text-align: center;
+    }    
+
+}
+
+@media (max-width: 768px){
+    .about h1{
+        font-size: 36px;
+    }
+    .about h2{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 425px){
+    .MainAboutCompany{
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+    .about h1{
+        font-size: 24px;
+    }
+    .about h2{
+        font-size: 14px;
+    }
+}

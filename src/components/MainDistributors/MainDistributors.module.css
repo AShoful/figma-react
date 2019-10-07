@@ -1,0 +1,76 @@
+.MainDistributors{
+    width: 100%;
+    margin-bottom: 82px;
+}   
+
+.MainDistributors h1{
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.15;
+    color: #3F3E3E;
+    margin-bottom: 47px;
+}
+
+.logoWrap{
+    width: 34%;
+    margin: 0 auto 48px auto;
+    }
+
+.logo{
+    background: url('../../img/jpg/logoDistr.jpg') no-repeat center;
+    width: 100%;
+    height: 65px;
+    background-size: 100%;
+    
+ }
+
+ .MainDistributors p{
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #3F3E3E;
+ }
+ .MainDistributors p:first-child{
+     color: #828282;
+     margin-bottom: 19px;
+}
+
+@media (max-width: 1440px){
+    .logoWrap{
+        width: 50%
+    }
+}
+
+@media (max-width: 1024px){
+    .logoWrap{
+        width: 70%
+    }
+    
+}
+
+@media (max-width: 768px){
+    .MainDistributors h1{
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .logoWrap{
+        width: 85%;
+        margin-bottom: 5px;
+    }
+    .MainDistributors p:first-child{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 425px){
+    .MainDistributors{
+        margin-bottom: 35px;
+    }
+    .logoWrap{
+        width: 95%
+    }
+    .MainDistributors p{
+        font-size: 12px;
+    }
+}
