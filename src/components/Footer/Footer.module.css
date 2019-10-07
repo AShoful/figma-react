@@ -87,7 +87,9 @@
     .search input{
         margin-bottom: 20px;
     }
-
+    .contact .wrapper{
+        justify-content: space-around
+    }
 }
 
 @media (max-width: 425px){
