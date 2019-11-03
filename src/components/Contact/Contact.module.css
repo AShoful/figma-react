@@ -1,0 +1,117 @@
+.Contact{
+    max-width: 1360px;
+    margin: 0 auto;
+    min-height: 280px;
+    padding: 20px;
+}
+
+.title{
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 57px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.phone{
+    width: 243px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+    text-align: center
+}
+
+.email{
+    width: 415px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.icons div{
+    width: 36px;
+    height: 36px;
+    margin: 0 12.5px;
+}
+
+.phoneIcon{
+    background: url("./icons/phone.png")
+}
+
+.viberIcon{
+    background: url("./icons/viber.png") no-repeat center,
+                url("./icons/XMLID 9.png") no-repeat 80% 20%;
+    background-color:#8F5DB7;
+    border-radius: 10px;
+}
+
+.twiterIcon{
+    background: url("./icons/twiter.png") no-repeat center;                
+    background-color:#0088CC;
+    border-radius: 10px;
+}
+
+.whatsAppIcon{
+    background: url("./icons/viber.png") no-repeat center;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    background-size: 80%;
+}
+
+.skypeIcon{
+    background: url("./icons/skype.png") no-repeat center,
+                url("./icons/letterS.png") no-repeat center;
+}
+
+.email .skypeLogin{
+    width: 180px;
+    text-align: left;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000; 
+}
+.gmail{
+    display: flex;
+    justify-content: space-around;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.gmailIcon{
+    width: 36px;
+    height: 36px;
+    background: url("./icons/letter.png") no-repeat 50% 65%,
+                url("./icons/topList.png") no-repeat 50% 35%;
+    background-color: #D44638;
+    border-radius: 10px;
+}

@@ -1,0 +1,66 @@
+.Welcome{
+    width: 100%;
+    height: 480px;
+    background-color: #FFFBF8;
+    padding: 20px 0 50px 0;
+}
+
+.title{
+    text-align: center;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 57px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.wrap{
+    margin: 0 auto;
+    max-width: 1360px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.address{
+    padding-left: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.address button{
+    width: 222px;
+    height: 62px;
+    padding-right: 25px;
+    background: url("./img/Vector (12).png") no-repeat 12px #FD871A;
+    background-size: 45px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.address div{
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+
+.map{
+    width: 1010px;
+    height: 315px;
+    background: url("./img/Rectangle.png") no-repeat center;
+}
+
+
+
+

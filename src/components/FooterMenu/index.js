@@ -13,8 +13,8 @@ const FooterMenu = props =>
     <nav className = {classes.FooterMenu}>
         <h1>Меню</h1>
         <ul className = {classes.linkList}>
-            {linkHeaderMenu.map(item =>
-            <li className = {classes.link}>
+            {linkHeaderMenu.map((item, i) =>
+            <li className = {classes.link} key = {i}>
                 <a href = {item.href}>{item.name}</a>
             </li> 
             )}

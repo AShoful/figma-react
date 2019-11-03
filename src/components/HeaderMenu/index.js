@@ -11,8 +11,8 @@ const linkHeaderMenu = [
 const HeaderMenu = props => 
     <nav className = {classes.HeaderMenu}>
         <ul className = {classes.linkList}>
-            {linkHeaderMenu.map(item =>
-            <li className = {classes.link}>
+            {linkHeaderMenu.map((item, i) =>
+            <li className = {classes.link} key = {i}>
                 <a href = {item.href}>{item.name}</a>
             </li> 
             )}
