@@ -50,16 +50,11 @@
     background-color: rgba(216, 99, 15, 0.76)
 }
 
-.left:disabled,
-.rigth:disabled{
-    opacity: 0.4;
-}
-
 .radio{
     position: absolute;
     top: 366px;
     margin: 0 auto;
-    width: 73px;
+    /* width: 73px; */
     display: flex;
     justify-content: space-between;
     z-index: 20;
@@ -72,6 +67,9 @@
     border-radius: 50%;
     background-color: white;
 } 
+.radioButton+.radioButton{
+    margin-left: 10px;
+}
 
 .active{
     background-color: rgba(216, 99, 15, 0.76);

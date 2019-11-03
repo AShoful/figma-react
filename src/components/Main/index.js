@@ -14,7 +14,7 @@ const Main = props =>
     <main className = {classes.Main}>
         <Slider />
         <Advantages />
-        <Contact />
+        {/* <Contact /> */}
         <Welcome />
     </main>
 
