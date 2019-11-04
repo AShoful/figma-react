@@ -54,7 +54,6 @@
     position: absolute;
     top: 366px;
     margin: 0 auto;
-    /* width: 73px; */
     display: flex;
     justify-content: space-between;
     z-index: 20;
@@ -68,7 +67,7 @@
     background-color: white;
 } 
 .radioButton+.radioButton{
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .active{

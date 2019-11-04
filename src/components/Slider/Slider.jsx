@@ -21,7 +21,7 @@ class Slider extends Component {
         });
     }
 
-    componentWillUpdate () {
+    UNSAFE_componentWillUpdate () {
         window.addEventListener('resize', this.handleResize);
     }
 
