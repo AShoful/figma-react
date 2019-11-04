@@ -1,17 +1,19 @@
-.Contact{
-    max-width: 1360px;
+/* @value textColor from '../../../../../css/colors.css'; */
+
+@value textColorLight: #FFEFE4;
+
+.contact{
+    width: 100%;
     margin: 0 auto;
-    min-height: 280px;
-    padding: 20px;
+    padding: 60px 25px 68px 25px;
 }
 
 .title{
-    font-family: Rubik;
-    font-style: normal;
+    font-family: RubikRegular;
     font-weight: 300;
     font-size: 48px;
     line-height: 57px;
-    color: #000000;
+    color: textColor;
     text-align: center;
     margin-bottom: 45px;
 }
@@ -23,95 +25,100 @@
     margin: 0 auto;
 }
 
-.phone{
-    width: 243px;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 38px;
-    color: #000000;
-    text-align: center
-}
-
-.email{
-    width: 415px;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 38px;
-    color: #000000;
-}
-
-.icons{
+.boxs{
     display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.icons div{
+.box{
+    display: flex;
+    font-family: RubikLight;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: textColor;
+}
+
+.box+.box{
+    margin-top: 20px;
+}
+
+.right{
+    justify-content: flex-end;
+}
+
+.icon{
     width: 36px;
     height: 36px;
-    margin: 0 12.5px;
+    margin-right: 20px;
 }
 
 .phoneIcon{
-    background: url("./icons/phone.png")
+    background: url("./img/phone.png");
+    background-size: 100%;    
 }
 
 .viberIcon{
-    background: url("./icons/viber.png") no-repeat center,
-                url("./icons/XMLID 9.png") no-repeat 80% 20%;
-    background-color:#8F5DB7;
-    border-radius: 10px;
+    background: url("./img/viber.png") no-repeat center;
+    background-size: 100%;
 }
 
 .twiterIcon{
-    background: url("./icons/twiter.png") no-repeat center;                
-    background-color:#0088CC;
-    border-radius: 10px;
+    background: url("./img/telegram.png") no-repeat center; 
+    background-size: 100%;               
 }
 
 .whatsAppIcon{
-    background: url("./icons/viber.png") no-repeat center;
-    border: 2px solid white;
-    border-radius: 50%;
-    background-color: #4CAF50;
-    background-size: 80%;
+    background: url("./img/whatsapp.png") no-repeat center;
+    background-size: 100%;
 }
 
 .skypeIcon{
-    background: url("./icons/skype.png") no-repeat center,
-                url("./icons/letterS.png") no-repeat center;
-}
-
-.email .skypeLogin{
-    width: 180px;
-    text-align: left;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 38px;
-    color: #000000; 
-}
-.gmail{
-    display: flex;
-    justify-content: space-around;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 32px;
-    line-height: 38px;
-    color: #000000;
+    background: url("./img/skype.png") no-repeat center;
+    background-size: 100%;
 }
 
 .gmailIcon{
-    width: 36px;
-    height: 36px;
-    background: url("./icons/letter.png") no-repeat 50% 65%,
-                url("./icons/topList.png") no-repeat 50% 35%;
-    background-color: #D44638;
-    border-radius: 10px;
+    background: url("./img/mail.png") no-repeat center;
+    background-size: 100%;
+}
+
+@media (max-width: 821px){
+       
+    .contact{
+        padding: 20px 0;    
+    }
+
+    .title{
+        font-size: 23px;
+        line-height: 28px; 
+        font-weight: 400;   
+    }
+
+    .wrap{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 320px;
+        padding-left: 10px;
+    }
+    
+    .boxs+.boxs{
+        margin-top: 20px;
+    }
+
+    .icon{
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+    }
+
+    .left,
+    .right{
+        justify-content: flex-start;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+    }
 }

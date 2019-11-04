@@ -1,41 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import { connect } from 'react-redux';
 
 import styles from './Contact.module.css';
 
+const TITLE = {
+    ua: 'Зв’язатися у зручний спосіб',
+    ru: 'Связаться с нами сейчас!'
+};
 
-const Contact = props =>
-    <div  className = {styles.Contact} >
-        <div className = {styles.title}>
-            Зв’язатися у зручний спосіб
-        </div>
-        <div className = {styles.wrap}>
-            <div className = {styles.phone}>
-                <div className = {styles.icons}>
-                    <div className = {styles.phoneIcon}></div>
-                    <div className = {styles.viberIcon}></div>
-                    <div className = {styles.twiterIcon}></div> 
-                </div>   
-                (097) 859-02-59
-            </div> 
-            <div className = {styles.email}>
-                <div className = {styles.icons}>
-                    <div className = {styles.skypeIcon}></div>
-                    <div className = {styles.skypeLogin}>skypeaddress</div>
-                </div>
-                <div className = {styles.gmail}>
-                    <div className = {styles.gmailIcon}></div>  
-                    pelleta.super@gmail.com
-                </div>
-            </div> 
-            <div className = {styles.phone}>
-                <div className = {styles.icons}>
-                    <div className = {styles.whatsAppIcon}></div>
-                    <div className = {styles.phoneIcon}></div>
-                </div>    
-                (066) 505-90-27
-            </div>   
-        </div>
-    </div>;
+const mapStateToProps = ({ application }) => {
+    return {
+        lang: application.lang
+    };
+};
 
-export default Contact;
- 
+class Contact extends Component {
+    static propTypes = {
+        lang: PropTypes.string
+    };
+
+    render () {
+        const { lang } = this.props;
+        return <div className={styles.contact} >
+            <div className={styles.title}>
+                {TITLE[lang]}
+            </div>
+            <div className={styles.wrap}>
+                <div className={styles.boxs}>
+                    <div className={classNames(styles.box, styles.left)} >
+                        <div className={classNames(styles.viberIcon, styles.icon)}></div>
+                        <div className={classNames(styles.phoneIcon, styles.icon)}></div>
+                        <div>(097) 859-02-59</div>
+                    </div>
+                    <div className={classNames(styles.box, styles.left)}>
+                        <div className={classNames(styles.whatsAppIcon, styles.icon)}></div>
+                        <div className={classNames(styles.phoneIcon, styles.icon)}></div>
+                        <div>(066) 505-90-27</div>
+                    </div>
+                </div>
+                <div className={styles.boxs}>
+                    <div className={classNames(styles.box, styles.right)}>
+                        <div className={classNames(styles.gmailIcon, styles.icon)}></div>
+                        <div className={styles.skypeLogin}>pelleta.super@gmail.com</div>
+                    </div>
+                    <div className={classNames(styles.box, styles.right)}>
+                        <div className={classNames(styles.skypeIcon, styles.icon)}></div>
+                        <div className={styles.skypeLogin}>ukrpelletex</div>
+                    </div>
+                </div>
+            </div>
+        </div>;
+    }
+}
+
+export default connect(mapStateToProps)(Contact);

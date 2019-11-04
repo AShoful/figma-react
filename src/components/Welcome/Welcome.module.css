@@ -1,66 +1,107 @@
-.Welcome{
+/* @value whiteBasic from '../../../../../css/colors.css';
+@value blackBasic from '../../../../../css/colors.css';
+@value brightOrange from '../../../../../css/colors.css';
+@value lightGrey from '../../../../../css/colors.css';
+@value textColor from '../../../../../css/colors.css'; */
+
+@value whiteBasic: #FFFFFF;
+@value blackBasic: #000000;
+@value brightOrange: #FD871A;
+@value darkOrange: #D8630F;
+@value darkGrey: #424242;
+@value textColorLight: #FFEFE4;
+
+
+.welcome{
     width: 100%;
-    height: 480px;
-    background-color: #FFFBF8;
+    min-height: 480px;
+    background-color: lightGrey;
     padding: 20px 0 50px 0;
 }
 
 .title{
     text-align: center;
-    font-family: Rubik;
-    font-style: normal;
+    font-family: RubikRegular;
     font-weight: 300;
     font-size: 48px;
     line-height: 57px;
-    color: #000000;
+    color: textColor;
     margin-bottom: 40px;
 }
 
 .wrap{
     margin: 0 auto;
-    max-width: 1360px;
+    max-width: 1060px;
     display: flex;
     justify-content: space-between;
 }
 
 .address{
-    padding-left: 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: none;
+    margin-right: 20px;
 }
 
-.address button{
-    width: 222px;
-    height: 62px;
-    padding-right: 25px;
-    background: url("./img/Vector (12).png") no-repeat 12px #FD871A;
-    background-size: 45px;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
+.addressButton{
+    margin-left:40px;
+    width: 120px;
+    height: 120px;
+    margin-left: 40px;
+    border: 2px solid brightOrange;
+    border-radius: 50%;
+    padding-top: 50px;
+    background: url("./img/directions.png") no-repeat center 10px;
+    background-size: 48px;
+    font-family: RubikRegular;
+    font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    text-align: right;
-    color: #FFFFFF;
+    text-align: center;
+    color: textColor;
+    white-space: pre-line;
 }
 
-.address div{
-    font-family: Rubik;
-    font-style: normal;
+.addressPlace{
+    font-family: RubikRegular;
     font-weight: 300;
     font-size: 24px;
     line-height: 28px;
-    color: #000000;
+    color: textColor;
+    white-space: pre-line;
 }
-
 
 .map{
-    width: 1010px;
+    width: 800px;
     height: 315px;
     background: url("./img/Rectangle.png") no-repeat center;
+    
 }
 
+@media (max-width:768px){
 
+    .wrap{
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .title{
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
 
+    .addressPlace{
+        margin-bottom: 30px;
+        text-align: center; 
+    }
+
+    .addressButton{
+        order: 2;
+        margin-bottom: 30px;
+    }
+
+    .map{
+        width: 100%;
+    }
+}
