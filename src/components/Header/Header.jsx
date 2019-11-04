@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-// import outsideClick from '../../hocs/outsideClick';
-
 import { connect } from 'react-redux';
 import setLang from '../../store/actions/setLang';
 
 import styles from './Header.module.css';
+import Description from '../Description/Description'
 
 import { LANGS } from '../../store/constants/constants';
 
@@ -43,7 +42,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-// @outsideClick
 class Header extends Component {
     static propTypes = {
         langMap: PropTypes.object.isRequired,
@@ -53,19 +51,13 @@ class Header extends Component {
         setLang: PropTypes.func
     };
 
-    // static defaultProps = {
-    //     turnOnClickOutside: noop,
-    //     setLang: noop
-    // };
-
     constructor (props) {
         super(props);
 
-        const { lang } = this.props;
         this.state = {
             langTipVisible: false,
             menuVisible: false,
-            activeMenuItem: MENU_ITEMS[lang][0]
+            activeMenuItemIndex: 0
         };
     }
 
@@ -107,20 +99,20 @@ class Header extends Component {
         this.props.setLang(lang);
     };
 
-    handleLabelChecked = prop => () => {
+    handleLabelChecked = i => () => {
         this.setState({
-            activeMenuItem: prop
-        });
+            activeMenuItemIndex: i
+        }, () => this.handleMenuClose() );
     };
 
     render () {
-        console.log(this.props)
         const { lang } = this.props;
-        const { langTipVisible, menuVisible, activeMenuItem } = this.state;
+        const { langTipVisible, menuVisible, activeMenuItemIndex } = this.state;
         const langsContainerHeight = lang.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
         const menuContainerHeight = MENU_ITEMS[lang].length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
 
-        return <div className={styles.root}>
+        return <React.Fragment>
+        <div className={styles.root}>
             <div className={styles.wrap}>
                 <div className={styles.nav}>
                     <div className={classNames(styles.navButton, { [styles.navButtonClose]: menuVisible })} onClick={this.handleMenuClick}>
@@ -133,8 +125,8 @@ class Header extends Component {
                     <div className={styles.menuList} style={{ height: `${menuVisible ? menuContainerHeight : 0}px` }}>
                         {
                             MENU_ITEMS[lang].map((item, j) => <div key={item}
-                                className={classNames(styles.menuItem, { [styles.activeMenuItem]: item === activeMenuItem })}
-                                onClick={this.handleLabelChecked(item)}
+                                className={classNames(styles.menuItem, { [styles.activeMenuItem]: j === activeMenuItemIndex })}
+                                onClick={this.handleLabelChecked(j)}
                                 style={{ right: `${menuVisible ? 0 : 10}px`, transitionDelay: `${0.15 + j * 0.05}s` }}>
                                 <span className={styles.underline}>{item}</span>
                             </div>
@@ -184,7 +176,9 @@ class Header extends Component {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        <Description blurComponent={langTipVisible || menuVisible} />
+        </React.Fragment>
     }
 }
 

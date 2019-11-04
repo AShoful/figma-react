@@ -1,42 +1,120 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import { connect } from 'react-redux';
 
 import styles from './Advantages.module.css';
 
-const advantages = [
-    {   title: 'Власне виробництво \n повного циклу', 
-        description: `- 3 стадії подрібнення \n - Сушка \n - Гранулювання \n - Охолодження \n - Просіювання \n - Фасування \n - Зберігання`, 
-        imageSrc: "./img/manufacturing.png" 
+import manufacturing from './img/manufacturing.png';
+import medal from './img/medal.png';
+import warehouse from './img/warehouse.png'; 
+import warranty from './img/warranty.png';
+import deliveryTruck from './img/delivery-truck.png'
+
+const ADVANTAGES = [
+    {
+        texts: {
+            ua: { title: 'Власне виробництво\nповного циклу',
+                description: `- 3 стадії подрібнення\n- Сушка\n- Гранулювання\n- Охолодження\n- Просіювання\n- Фасування\n- Зберігання` },
+            ru: { title: 'Собственное производство\nполного цикла',
+                description: `- 3 стадии измельчения\n- Сушка\n- Гранулирование\n- Охлаждение\n- Просеивание\n- Фасовка\n- Хранение` }
+        },
+        imageSrc: manufacturing
     },
-    {   title: 'Стабільність споживчих \n характеристик', 
-        description: 'Пропонуємо пелети тільки власного \n виробництва! 8 років нашого досвіду \n підтверджують \n незмінні показники якості, для того \n щоб Ваш котел працював стабільно \n без надокучливих \n переналаштувань.', 
-        imageSrc: "./img/medal.png" 
+    {
+        texts: {
+            ua: { title: 'Стабільність споживчих\nхарактеристик',
+                description: `Пропонуємо пелети тільки власного\nвиробництва! 8 років нашого досвіду
+                підтверджують\nнезмінні показники якості, для того,\nщоб Ваш котел працював стабільно\nбез надокучливих\nпереналаштувань.` },
+            ru: { title: 'Стабильность потребительских\nхарактеристик',
+                description: `Предлагаем пеллеты только собственного\nпроизводства! 8 лет нашего опыта
+                подтверждают неизменные показатели качества, для того,\nчтобы Ваш котел работал стабильно\nбез навязчивых перенастроек.` }
+        },
+        imageSrc: medal
     },
-    {   title: ' Запас пелет поруч \n з Вами', 
-        description: 'Нас легко побачити на власні очі, \n взяти зразок і перевірити якість. Ми \n тут постійно. Нас не \n треба буде завтра шукати:) На наших \n власних складах завжди готова \n продукція для Вас.', 
-        imageSrc: "./img/warehouse.png" 
+    {
+        texts: {
+            ua: { title: ' Запас пелет поруч\nз Вами',
+                description: `Нас легко побачити на власні очі,\nвзяти зразок і перевірити якість. Ми тут постійно. Нас не\nтреба буде завтра шукати:) На наших
+                власних складах завжди готова\nпродукція для Вас.` },
+            ru: { title: ' Запас пеллет рядом\nс Вами',
+                description: `Нас легко увидеть воочию,\nвзять образец и проверить качество. Мы постоянно здесь, круглый год:) Завтра нас не
+                надо будет искать:) На наших\nскладах всегда готовы\nпеллеты для Вас.` }
+        },
+        imageSrc: warehouse
     },
-    {   title: 'Гарантуємо поставки на весь \n опалювальний сезон', 
-        description: 'Гарантія поставок відповідно до \n домовленостей \n Ми приймаємо тільки ті замовлення,\n які нам під силу! Впевнитись легко:)', 
-        imageSrc: "./img/warranty.png" 
+    {
+        texts: {
+            ua: { title: 'Гарантуємо поставки на весь\nопалювальний сезон',
+                description: 'Гарантія поставок відповідно до\nдомовленостей.\nМи приймаємо тільки ті замовлення,\nякі нам під силу! Впевнитись легко:)' },
+            ru: { title: 'Гарантируем поставки на весь\nотопительный сезон',
+                description: 'Гарантия поставок в соответствии с\nдоговоренностями.\nМы принимаем только те заказы,\nкоторые нам под силу! Убедиться легко!' }
+        },
+        imageSrc: warranty
     },
-    {   title: 'Зручна та швидка \n доставка', 
-        description: 'Доставимо пелети в межах Києва і \n області партіями від 15 кг до 22 т. Лише \n відповідальні і \n ввічливі водії:)', 
-        imageSrc: "./img/Vector (5).png" 
+    {
+        texts: {
+            ua: { title: 'Зручна та швидка\nдоставка',
+                description: 'Лише зателефонуйте нам - і чемні\nта відповідальні водії доставлять\nпелети від 15 кг до 22 тонн вчасно!' },
+            ru: { title: 'Простой заказ и быстрая\nдоставка',
+                description: 'Всего лишь позвоните нам \n- и ответственные водители\nвовремя доставят пеллеты\nот 15 кг до 22 тонн.' }
+        },
+        imageSrc: deliveryTruck
     }
-]
+];
 
-const Advantages = props =>
-    <div  className = {styles.Advantages} >
-        <div className = {styles.wrap}>
-            {advantages.map((item, i) => 
-                <div className = {classNames(styles.advantage, {[styles.active]:true})} key = {i}>
-                    <img src={require(`${item.imageSrc}`)} alt ={`рисунок ${i}`}/>
-                    <h3>{item.title}</h3>
-                    <div>{item.description} </div>
-                </div>)}
-        </div>
-    </div>;
+const mapStateToProps = ({ application }) => {
+    return {
+        lang: application.lang
+    };
+};
 
-export default Advantages;
- 
+class Advantages extends Component {
+    static propTypes={
+        lang: PropTypes.string
+    };
+
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            keyActiveClass: -1
+        };
+    }
+
+    handleOnMouseEnter = (i) => {
+        this.setState({
+            keyActiveClass: +i
+        });
+    }
+
+    handleOnMouseLeave = () => {
+        this.setState({
+            keyActiveClass: -1
+        });
+    }
+
+    render () {
+        const { lang } = this.props;
+        const { keyActiveClass } = this.state;
+
+        return <div className={styles.advantages}>
+            <div className={classNames({ [styles.blur]: keyActiveClass !== -1 })} ></div>
+            <div className={styles.wrap}>
+                {ADVANTAGES.map((item, i) =>
+                    <div
+                        className={classNames(styles.advantage, { [styles.active]: keyActiveClass === i })}
+                        key={i}
+                        onMouseEnter = {() => this.handleOnMouseEnter(i)}
+                        onMouseLeave = {this.handleOnMouseLeave}>
+                        <img src= {item.imageSrc} alt={`img ${i}`} className={styles.advantageImg}/>
+                        <h3 className={styles.advantageTitle}>{item.texts[lang].title}</h3>
+                        <div className={styles.advantageDescription}>{item.texts[lang].description}</div>
+                    </div>)}
+            </div>
+        </div>;
+    }
+}
+
+export default connect(mapStateToProps)(Advantages);

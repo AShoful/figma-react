@@ -10,7 +10,7 @@ class Slider extends Component {
         super(props);
 
         this.state = {
-            sliderIndex: 1,
+            sliderIndex: 0,
             sliderWidth: document.documentElement.clientWidth
         };
     }

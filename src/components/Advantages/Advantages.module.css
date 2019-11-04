@@ -1,53 +1,149 @@
-.Advantages {
+/* @value blackBasic from '../../../../../css/colors.css';
+@value lightGrey from '../../../../../css/colors.css';
+@value textColor from '../../../../../css/colors.css'; */
+
+@value whiteBasic: #FFFFFF;
+@value blackBasic: #000000;
+@value brightOrange: #FD871A;
+@value darkOrange: #D8630F;
+@value darkGrey: #424242;
+@value lightGrey: #FFFBF8;
+@value textColor: #575757;
+
+
+.advantages {
     width: 100%;
-    min-height: 840px;
-    background-color: #FFFBF8;
+    min-height: 400px;
+    background-color: lightGrey;
+    font-family: RubikRegular;
+    color: textColor;
 }
 
 .wrap{
     max-width: 1360px;
+    padding-top: 60px;
     margin: 0 auto;
-    padding: 20px 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
 }
 
 .advantage{
-    padding:30px;
-    width: 360px;
-    height: 360px;
-    margin: 20px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 15px;
 }
-.advantage img{
+
+.advantageImg{
     display: block;
-    width: 66px;
-    margin: 0 auto 30px auto;
+    width: 84px;
+    margin: 0 auto 10px auto;
 }
-.advantage h3{
-    font-family: RubikRegular;
-    font-style: normal;
-    font-weight: normal;
+
+.advantageTitle{
     font-size: 18px;
     line-height: 21px;
     text-align: center;
-    color: #000000;
-    padding-bottom: 30px;
+    margin-bottom: 15px;
     white-space: pre-line;
 }
-.advantage div{
-    font-family: RubikRegular;
-    font-style: normal;
+
+.advantageDescription{
     font-weight: 300;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: #000000;
     white-space: pre-line;
-    
+    margin-bottom: 60px;
 }
 
-.active{
-    border: 2px solid black
+@media (min-width: 1024px){
+
+    @keyframes blur {
+        0% { backdrop-filter: blur(0px); }
+        50% { backdrop-filter: blur(2px); }
+        100% { backdrop-filter: blur(5px); }
+    }
+
+    .advantages{
+        position: relative;
+        z-index: 1;
+    }
+
+    .wrap{
+        padding-top: 30px;
+    }
+
+    .blur{
+        position: absolute;
+        z-index: 4;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        animation-name: blur;
+        animation-duration: 1s;
+    }
+
+    .advantage{
+        position: relative;
+        height: 185px;
+        width: 265px;
+        margin: 0 65px;
+    }
+
+    .advantageDescription{
+        visibility: hidden;
+        height: 0;
+    }
+
+    .advantage.active{
+        z-index: 10;
+        background-color: #fff;
+        transition: background-color 1s;
+    }
+
+    .advantage.active .advantageDescription{
+        position: absolute;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 150px;
+        width: 265px;
+        text-align: center;
+        background-color: #fff;
+        z-index: 10;
+        transition: height 1s ease-in-out, visibility 0.1s ease-in-out 0.35s;
+    }
+
+    .advantage:not(:first-child).active .advantageDescription{
+        white-space: normal;
+    }
+
+    .advantage:nth-child(1).active .advantageDescription,
+    .advantage:nth-child(2).active .advantageDescription,
+    .advantage:nth-child(3).active .advantageDescription,
+    .advantage:nth-child(4).active .advantageDescription{
+        top: 150px;
+        left: 0;
+    }
+
+    .advantage:nth-child(5).active .advantageDescription{
+        top: -150px;
+        left: 0;
+    }
+}
+
+@media (min-width: 1360px){
+
+    .wrap{
+        max-width: 1260px;
+    }
+
+    .advantage:nth-child(4).active .advantageDescription{
+        top: -150px;
+        left: 0;
+    }
 }

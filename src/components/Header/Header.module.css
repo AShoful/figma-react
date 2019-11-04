@@ -236,7 +236,7 @@
     width: 100px;
     z-index: 12;
     top: 39px;
-    right: 0px;
+    right: -8px;
     overflow: hidden;
     height: 0;
     transition: height .2s ease-in-out;
