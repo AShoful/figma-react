@@ -1,6 +1,5 @@
-/* @value textColor from '../../../../../css/colors.css'; */
-
-@value textColorLight: #FFEFE4;
+@value colors: '../../css/colors.css';
+@value textColor from colors; 
 
 .contact{
     width: 100%;

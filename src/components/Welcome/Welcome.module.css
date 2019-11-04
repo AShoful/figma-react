@@ -11,6 +11,22 @@
 @value darkGrey: #424242;
 @value textColorLight: #FFEFE4;
 
+/*variables.css
+@value customBlue: #0c77f8;
+@value customRed: #ff0000;
+@value customGreen: #aaf200;
+
+/* demo.css */
+
+/* import your colors... */
+/*@value colors: "./variables.css";
+@value customBlue, customRed, customGreen from colors;
+
+.button {
+  color: customBlue;
+  display: inline-block;
+}*/
+
 
 .welcome{
     width: 100%;

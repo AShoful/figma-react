@@ -1,15 +1,5 @@
-/* @value blackBasic from '../../../../../css/colors.css';
-@value lightGrey from '../../../../../css/colors.css';
-@value textColor from '../../../../../css/colors.css'; */
-
-@value whiteBasic: #FFFFFF;
-@value blackBasic: #000000;
-@value brightOrange: #FD871A;
-@value darkOrange: #D8630F;
-@value darkGrey: #424242;
-@value lightGrey: #FFFBF8;
-@value textColor: #575757;
-
+@value colors: "../../css/colors.css";
+@value whiteBasic, blackBasic, brightOrange, darkOrange, darkGrey, lightGrey, textColor from colors;
 
 .advantages {
     width: 100%;

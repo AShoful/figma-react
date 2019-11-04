@@ -1,17 +1,5 @@
-/* @value whiteBasic from '../../css/color.css';
-@value blackBasic from '../../css/colors.css';
-@value brightOrange from '../../css/colors.css';
-@value darkOrange from '../../css/colors.css';
-@value darkGrey from '../../css/colors.css';
-@value textColorLight from '../../css/colors.css'; */
-
-@value whiteBasic: #FFFFFF;
-@value blackBasic: #000000;
-@value brightOrange: #FD871A;
-@value darkOrange: #D8630F;
-@value darkGrey: #424242;
-@value textColorLight: #FFEFE4;
-
+@value colors: "../../css/colors.css";
+@value whiteBasic, blackBasic, brightOrange, darkOrange, darkGrey, lightGrey, textColor, textColorLight from colors;
 
 .root {
     min-height: 60px;
