@@ -10,7 +10,7 @@
 .wrap{
     margin: 0 auto;
     max-width: 1360px;
-    padding: 13px 40px;
+    padding: 14px 40px;
     display: flex;
     justify-content: space-between
 }
@@ -46,7 +46,7 @@
     color: whiteBasic
 }
 
-.stubbs{
+.shoful{
     font-family: HelveticaNeueCyr;
     font-size: 18px;
     line-height: 18px;
@@ -79,7 +79,7 @@
         line-height: 17px;
     }
 
-    .stubbs{
+    .shoful{
         font-size: 14px;
         line-height: 17px;
         text-transform: initial;
