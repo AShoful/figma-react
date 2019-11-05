@@ -1,5 +1,5 @@
 @value colors: "../../css/colors.css";
-@value whiteBasic, blackBasic, brightOrange, darkOrange, darkGrey, lightGrey, textColor from colors;
+@value whiteBasic, lightGrey, textColor from colors;
 
 .advantages {
     width: 100%;
@@ -20,7 +20,7 @@
 
 .advantage{
     width: 300px;
-    margin: 0 15px;
+    margin: 0 25px;
 }
 
 .advantageImg{
@@ -82,8 +82,8 @@
 
     .advantage.active{
         z-index: 10;
-        background-color: #fff;
-        transition: background-color 1s;
+        background-color: whiteBasic;
+        transition: background-color 0.5s;
         
     }
 
@@ -98,7 +98,7 @@
         text-align: center;
         background-color: #fff;
         z-index: 10;
-        transition: height 1s ease-in-out, visibility 0.1s ease-in-out 0.35s;
+        transition: height 0.5s ease-in-out, visibility 0.1s ease-in-out;
     }
 
     .advantage:not(:first-child).active .advantageDescription{

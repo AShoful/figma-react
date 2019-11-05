@@ -104,6 +104,7 @@
     position: relative;
     transition: .15s ease-in-out;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .menuItem .underline {
@@ -264,12 +265,12 @@
     .contentWrap{
         width: 97%;
         margin-bottom: 10px;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .numbers{
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 95%;
     }
 
@@ -292,11 +293,7 @@
     .nav{
         margin-right: 10px;
     }
-
-    .numbers{
-        justify-content: space-between;
-    }
-
+  
     .navButton{
         width: 42px;
         height: 42px;
@@ -309,6 +306,10 @@
     .menuItem {
         justify-content: center;
         padding-left: 0;
+    }
+
+    .title{
+        width: 200px;
     }
 
     .title, .numbers{

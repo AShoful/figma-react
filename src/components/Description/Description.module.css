@@ -7,7 +7,7 @@
     height: 400px;
     font-family: RubikRegular;
     background: url('./img/Rectangle.png') no-repeat center;
-    background-size: 100%;
+    background-size: cover;
     color: textColorLight;
     z-index: 0;
 }
@@ -18,7 +18,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     z-index: 1;
 }
@@ -30,8 +30,8 @@
 }
 
 .title{
-    font-size: 64px;
-    line-height: 76px;
+    font-size: 56px;
+    line-height: 1.15;
     text-transform: uppercase;
     margin-bottom: 25px;
     margin-left: 100px;
@@ -39,14 +39,14 @@
 
 .subtitle{
     font-size: 36px;
-    line-height: 30px;
+    line-height: 1.15;
     margin-bottom: 20px;
     margin-left: 100px;
 }
 
 .text{
     font-size: 24px;
-    line-height: 30px;
+    line-height: 1.15;
     margin-left: 100px;
 }
 
@@ -60,28 +60,45 @@
 
     .wrap{
         padding-top: 54px;
-        max-width: 320px;
+        max-width: 420px; 
     }
 
     .title{
         font-size: 35px;
-        line-height: 43px;
-        margin-left: 10px;
         margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     .subtitle{
         font-size: 24px;
-        line-height: 28px;
-        margin-left: 10px;
         margin-bottom: 5px;
+        margin-left: 10px;
     }
 
     .text{
         font-size: 18px;
-        line-height: 21px;
-        margin-left: 10px;
         margin-bottom: 5px;
+        margin-left: 10px;
     }
 }    
-    
+
+@media (max-width: 425px){
+
+    .wrap{
+        padding-top: 54px;
+        /* max-width: 300px; */
+        margin-left: 25px; 
+    }
+
+    .title{
+        font-size: 24px;
+    }
+
+    .subtitle{
+        font-size: 20px;
+    }
+
+    .text{
+        font-size: 16px;
+    }
+}

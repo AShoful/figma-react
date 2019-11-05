@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -9,12 +10,8 @@ import styles from './Header.module.css';
 import Description from '../Description/Description'
 
 import { LANGS } from '../../constants/constants';
+import { MENU_ITEM } from '../../constants/routes' 
 
-
-const MENU_ITEMS = {
-    ua: ['Продукція', 'Доставка', 'Про нас', 'Чому Ми', 'Контакти'],
-    ru: ['Продукция', 'Доставка', 'О нас', 'Почему мы', 'Контакты']
-};
 const LIST_ITEM_HEIGHT = 35;
 const LIST_ITEM_MARGIN = 35;
 const TEXTHEADER = {
@@ -107,7 +104,7 @@ class Header extends Component {
         const { lang } = this.props;
         const { langTipVisible, menuVisible, activeMenuItemIndex } = this.state;
         const langsContainerHeight = lang.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN);
-        const menuContainerHeight = MENU_ITEMS[lang].length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
+        const menuContainerHeight = MENU_ITEM.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
 
         return <React.Fragment>
         <div className={styles.root}>
@@ -122,13 +119,15 @@ class Header extends Component {
                     </div>
                     <div className={styles.menuList} style={{ height: `${menuVisible ? menuContainerHeight : 0}px` }}>
                         {
-                            MENU_ITEMS[lang].map((item, j) => <div key={item}
-                                className={classNames(styles.menuItem, { [styles.activeMenuItem]: j === activeMenuItemIndex })}
-                                onClick={this.handleLabelChecked(j)}
-                                style={{ right: `${menuVisible ? 0 : 10}px`, transitionDelay: `${0.15 + j * 0.05}s` }}>
-                                <span className={styles.underline}>{item}</span>
-                            </div>
-                            )
+                            MENU_ITEM.map((link, j) => <NavLink
+                                    key={j}
+                                    exact={link.exact}
+                                    to={`${link.path}`}
+                                    onClick={this.handleLabelChecked(j)}
+                                    style={{ right: `${menuVisible ? 0 : 10}px`, transitionDelay: `${0.15 + j * 0.05}s` }}
+                                    className={classNames(styles.menuItem, { [styles.activeMenuItem]: j === activeMenuItemIndex })}>
+                                    <span className={styles.underline}>{link.name[lang]}</span>
+                                </NavLink>)
                         }
                     </div>
                 </div>
