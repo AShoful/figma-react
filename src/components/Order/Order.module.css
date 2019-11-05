@@ -83,6 +83,7 @@
     text-align: center;
     background-color: transparent;
     align-self: center;
+    outline: none;
 }
 
 @media (max-width: 768px){

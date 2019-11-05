@@ -12,7 +12,7 @@ class Footer extends Component {
                     <div className={classNames(styles.facebook, styles.icon)}></div>
                 </div>
                 <div className={styles.contact}>© Pelletex™<br/>2019</div>
-                <div className={styles.stubbs}><span className={styles.hidden}>Developed</span> by<br/>Stubbs</div>
+                <div className={styles.stubbs}><span className={styles.hidden}>Developed</span> by<br/>Shoful</div>
             </div>
         </footer>;
     }
