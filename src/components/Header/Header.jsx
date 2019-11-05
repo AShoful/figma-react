@@ -134,10 +134,10 @@ class Header extends Component {
                 <div className={styles.headerContent}>
                     <div className={styles.numbers}>
                         <a className={styles.phoneLink} href="tel:">
-                            <div> (097) 859-02-59</div>
+                            <div> (097) 123-45-67</div>
                         </a>
                         <a className={styles.phoneLink} href="tel:">
-                            <div> (066) 505-90-27</div>
+                            <div> (066) 987-54-32</div>
                         </a>
                     </div>
                     <div className={styles.contentWrap}>

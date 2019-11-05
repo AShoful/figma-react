@@ -33,12 +33,12 @@ class Contact extends Component {
                     <div className={classNames(styles.box, styles.left)} >
                         <div className={classNames(styles.viberIcon, styles.icon)}></div>
                         <div className={classNames(styles.phoneIcon, styles.icon)}></div>
-                        <div>(097) 859-02-59</div>
+                        <div>(097) 123-45-67</div>
                     </div>
                     <div className={classNames(styles.box, styles.left)}>
                         <div className={classNames(styles.whatsAppIcon, styles.icon)}></div>
                         <div className={classNames(styles.phoneIcon, styles.icon)}></div>
-                        <div>(066) 505-90-27</div>
+                        <div>(066) 987-65-43</div>
                     </div>
                 </div>
                 <div className={styles.boxs}>
