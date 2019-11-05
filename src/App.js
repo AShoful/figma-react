@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header'
 import outsideClick from './hocs/outsideClick'
-import MainPage from './pages/MainPage/'
+import MainPage from './pages/MainPage/MainPage'
 import Footer from './components/Footer/Footer'
 import './App.css';
 

@@ -8,15 +8,15 @@ import setLang from '../../store/actions/setLang';
 import styles from './Header.module.css';
 import Description from '../Description/Description'
 
-import { LANGS } from '../../store/constants/constants';
+import { LANGS } from '../../constants/constants';
 
 
 const MENU_ITEMS = {
     ua: ['Продукція', 'Доставка', 'Про нас', 'Чому Ми', 'Контакти'],
     ru: ['Продукция', 'Доставка', 'О нас', 'Почему мы', 'Контакты']
 };
-const LIST_ITEM_HEIGHT = 36;
-const LIST_ITEM_MARGIN = 37;
+const LIST_ITEM_HEIGHT = 35;
+const LIST_ITEM_MARGIN = 35;
 const TEXTHEADER = {
     ua: {
         nameCompany: 'ТОВ "ВКП "Укрпелетекспорт"',
@@ -31,7 +31,6 @@ const TEXTHEADER = {
 };
 const mapStateToProps = ({ application }) => {
     return {
-        langMap: application.langMap,
         lang: application.lang
     };
 };
@@ -44,7 +43,6 @@ const mapDispatchToProps = dispatch => {
 
 class Header extends Component {
     static propTypes = {
-        langMap: PropTypes.object.isRequired,
         lang: PropTypes.string,
         outsideClickEnabled: PropTypes.bool,
         turnOnClickOutside: PropTypes.func,
@@ -108,7 +106,7 @@ class Header extends Component {
     render () {
         const { lang } = this.props;
         const { langTipVisible, menuVisible, activeMenuItemIndex } = this.state;
-        const langsContainerHeight = lang.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
+        const langsContainerHeight = lang.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN);
         const menuContainerHeight = MENU_ITEMS[lang].length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
 
         return <React.Fragment>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+// import ReactDependentScript from 'react-dependent-script'
 
 import { connect } from 'react-redux';
 
@@ -40,7 +41,7 @@ class Welcome extends Component {
     }
 
     componentDidMount () {
-        this.initMap();
+        setTimeout(()=> window.google ? this.initMap() : alert('hhggjgj'), 0);
     }
 
     initMap () {
@@ -73,7 +74,7 @@ class Welcome extends Component {
                         }, () => this.calculateAndDisplayRoute(directionsService, directionsRenderer));
                     },
                     error => {
-                        alert(error.massage, 'Ваш браузер блокирует передачу данных для построения маршрута');
+                        alert('Ваш браузер блокирует передачу данных для построения маршрута');
                     });
             } else { alert('Ваш браузер не поддерживает сервис построения маршрута'); }
         });
@@ -97,7 +98,7 @@ class Welcome extends Component {
 
     render () {
         const { lang } = this.props;
-
+        
         return <div className={styles.welcome} >
             <div className={styles.title}>{TEXTS[lang].title}</div>
             <div className={styles.wrap}>
@@ -107,7 +108,7 @@ class Welcome extends Component {
                     </button>
                     <div className={styles.addressPlace}> {TEXTS[lang].address}</div>
                 </div>
-                <div className={styles.map} id='map'/>
+            <div className={styles.map} id='map'/>
             </div>
         </div>;
     }

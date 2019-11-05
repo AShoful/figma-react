@@ -1,32 +1,5 @@
-/* @value whiteBasic from '../../../../../css/colors.css';
-@value blackBasic from '../../../../../css/colors.css';
-@value brightOrange from '../../../../../css/colors.css';
-@value lightGrey from '../../../../../css/colors.css';
-@value textColor from '../../../../../css/colors.css'; */
-
-@value whiteBasic: #FFFFFF;
-@value blackBasic: #000000;
-@value brightOrange: #FD871A;
-@value darkOrange: #D8630F;
-@value darkGrey: #424242;
-@value textColorLight: #FFEFE4;
-
-/*variables.css
-@value customBlue: #0c77f8;
-@value customRed: #ff0000;
-@value customGreen: #aaf200;
-
-/* demo.css */
-
-/* import your colors... */
-/*@value colors: "./variables.css";
-@value customBlue, customRed, customGreen from colors;
-
-.button {
-  color: customBlue;
-  display: inline-block;
-}*/
-
+@value colors: '../../css/colors.css';
+@value textColor, brightOrange, lightGrey from colors;
 
 .welcome{
     width: 100%;
@@ -95,7 +68,7 @@
     
 }
 
-@media (max-width:768px){
+@media (max-width: 768px){
 
     .wrap{
         flex-direction: column;

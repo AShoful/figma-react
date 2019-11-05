@@ -26,7 +26,7 @@
 .advantageImg{
     display: block;
     width: 84px;
-    margin: 0 auto 10px auto;
+    margin: 10px auto;
 }
 
 .advantageTitle{
@@ -48,12 +48,6 @@
 
 @media (min-width: 1024px){
 
-    @keyframes blur {
-        0% { backdrop-filter: blur(0px); }
-        50% { backdrop-filter: blur(2px); }
-        100% { backdrop-filter: blur(5px); }
-    }
-
     .advantages{
         position: relative;
         z-index: 1;
@@ -72,8 +66,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-        animation-name: blur;
-        animation-duration: 1s;
     }
 
     .advantage{
@@ -92,6 +84,7 @@
         z-index: 10;
         background-color: #fff;
         transition: background-color 1s;
+        
     }
 
     .advantage.active .advantageDescription{
