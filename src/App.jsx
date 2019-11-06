@@ -41,7 +41,7 @@ class App extends Component {
       }
       const { lang, langRoute } = this.props;
       const { routeWithoutLang } = getLangRouteParts(pathname);
-      console.log(routeWithoutLang)
+      console.log(routeWithoutLang, langUrl)
 
       return lang === langUrl ? <Component /> : <Redirect to={`${langRoute}${routeWithoutLang}`} />;
   };
@@ -53,7 +53,7 @@ class App extends Component {
           <HeaderOutsideClick/>
           <div className="pageContent">
             <Switch>
-                <Route exact path = '/' render = {this.renderComponent( MainPage, lang)} />
+                <Route exact path = '/:lang(ru)?' render = {this.renderComponent( MainPage, lang)} />
                 <Route exact path = '/products' render = {this.renderComponent( Page404, lang)} />
                 <Route component={Page404} />
             </Switch>
