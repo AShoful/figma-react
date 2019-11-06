@@ -28,7 +28,8 @@ const TEXTHEADER = {
 };
 const mapStateToProps = ({ application }) => {
     return {
-        lang: application.lang
+        lang: application.lang,
+        langRoute: application.langRoute
     };
 };
 
@@ -43,7 +44,12 @@ class Header extends Component {
         lang: PropTypes.string,
         outsideClickEnabled: PropTypes.bool,
         turnOnClickOutside: PropTypes.func,
+        langRoute: PropTypes.string,
         setLang: PropTypes.func
+    };
+
+    static defaultProps = {
+        langRoute: ''
     };
 
     constructor (props) {
@@ -101,7 +107,7 @@ class Header extends Component {
     };
 
     render () {
-        const { lang } = this.props;
+        const { lang, langRoute } = this.props;
         const { langTipVisible, menuVisible, activeMenuItemIndex } = this.state;
         const langsContainerHeight = lang.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN);
         const menuContainerHeight = MENU_ITEM.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
@@ -122,7 +128,7 @@ class Header extends Component {
                             MENU_ITEM.map((link, j) => <NavLink
                                     key={j}
                                     exact={link.exact}
-                                    to={`${link.path}`}
+                                    to={`${langRoute}${link.path}`}
                                     onClick={this.handleLabelChecked(j)}
                                     style={{ right: `${menuVisible ? 0 : 10}px`, transitionDelay: `${0.15 + j * 0.05}s` }}
                                     className={classNames(styles.menuItem, { [styles.activeMenuItem]: j === activeMenuItemIndex })}>

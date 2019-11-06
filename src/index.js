@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import lang from './hocs/lang/lang.jsx'
+import App from './App.jsx';
 import {BrowserRouter} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import {createStore, applyMiddleware, compose} from 'redux'
@@ -28,15 +29,16 @@ const store = createStore(
 		applyMiddleware(thunk)
 		)
 	)
-
+const AppLang = lang(App)
 
 const app = (
 	<Provider store = {store}>
 		<BrowserRouter>
-			<App />
+			<AppLang />
 		</BrowserRouter>
 	</Provider>
 	)
+	
 
 ReactDOM.render(app, document.getElementById('root'));
 
