@@ -13,7 +13,7 @@ import Description from '../Description/Description'
 import { LANGS } from '../../constants/constants';
 import { MENU_ITEM } from '../../constants/routes' 
 
-const LIST_ITEM_HEIGHT = 25;
+const LIST_ITEM_HEIGHT = 35;
 const LIST_ITEM_MARGIN = 35;
 
 const mapStateToProps = ({ application }) => {

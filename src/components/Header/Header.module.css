@@ -182,7 +182,6 @@
 }
 
 .langs {
-    /* position: relative; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -210,7 +209,6 @@
     cursor: pointer;
     color: textColorLight;
     text-transform: uppercase;
-    /* position: relative; */
     right: 0px;
     transition: .15s ease-in-out;
 }
