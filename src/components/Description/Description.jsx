@@ -15,7 +15,7 @@ const mapStateToProps = ({ application }) => {
 
 class Description extends Component {
     static propTypes={
-        lang: PropTypes.string,
+        langMap: PropTypes.object.isRequired,
         blurComponent: PropTypes.bool
     };
 

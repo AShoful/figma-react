@@ -9,9 +9,9 @@ const mapStateToProps = ({ application }) => ({
     })
 
 const AdvantagesPage = (props) =>{ 
-        const advantages = propOr('advantages', {}, props.langMap);
+        const advantagesPage = propOr('advantagesPage', {}, props.langMap);
         return <div className={styles.advantages}>
-            {advantages.title}
+            {advantagesPage.title}
         </div>
     }
 
