@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/figma-react/static/css/main.6f108d2f.chunk.css",
+    "main.js": "/figma-react/static/js/main.20edf4b1.chunk.js",
+    "main.js.map": "/figma-react/static/js/main.20edf4b1.chunk.js.map",
+    "runtime-main.js": "/figma-react/static/js/runtime-main.3f2c5e5f.js",
+    "runtime-main.js.map": "/figma-react/static/js/runtime-main.3f2c5e5f.js.map",
+    "static/js/2.fd619bd0.chunk.js": "/figma-react/static/js/2.fd619bd0.chunk.js",
+    "static/js/2.fd619bd0.chunk.js.map": "/figma-react/static/js/2.fd619bd0.chunk.js.map",
+    "index.html": "/figma-react/index.html",
+    "precache-manifest.6723e6248a99f961eb7bac7969050ab4.js": "/figma-react/precache-manifest.6723e6248a99f961eb7bac7969050ab4.js",
+    "service-worker.js": "/figma-react/service-worker.js",
+    "static/css/main.6f108d2f.chunk.css.map": "/figma-react/static/css/main.6f108d2f.chunk.css.map",
+    "static/media/index.css": "/figma-react/static/media/Rubik-Regular.35af6dbe.ttf",
+    "static/media/Description.module.css": "/figma-react/static/media/RectangleMobile.49a4ae60.png",
+    "static/media/Welcome.module.css": "/figma-react/static/media/Rectangle.bcd38194.png",
+    "static/media/Order.module.css": "/figma-react/static/media/bags.517027b5.png",
+    "static/media/slide1.jpg": "/figma-react/static/media/slide1.5e83ec6a.jpg",
+    "static/media/slide2.png": "/figma-react/static/media/slide2.5a730072.png",
+    "static/media/slide3.png": "/figma-react/static/media/slide3.a264917f.png",
+    "static/media/slide4.png": "/figma-react/static/media/slide4.0c92af4c.png"
+  }
+}
