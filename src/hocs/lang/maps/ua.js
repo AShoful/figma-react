@@ -2,19 +2,18 @@
 
 export default {
     menu: {
-        about: 'іііііііііііііііі',
-        products: 'Продукция',
-        news: 'Новости',
-        buy: 'Где купить',
-        contacts: 'Контакты',
-        prices: 'Оптовый прайс-лист'
+        main: 'Головна',
+        products: 'Продукція',
+        delivery: 'Доставка',
+        about: 'Про нас',
+        advantages: 'Чому Ми',
+        contacts: 'Контакти'
     },
     header: {
-        location: {
-            city: 'г.Киев, Украина',
-            shedule: 'Пн-Сб 10:00 - 18:00'
-        },
-        phone: '+38(050)-123-45-67'
+        nameCompany: 'ТОВ "ВКП "Укрпелетекспорт"',
+        addressCompanyTop: 'с. Погреби, вул. Промислова, 12',
+        addressCompanyBottom: 'Київська обл., Броварський р-н.',
+        phone: ['(097) 123-45-67','(066) 987-54-32']
     },
     footer: {
         title: 'Меню',

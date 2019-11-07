@@ -1,20 +1,18 @@
 /* eslint-disable max-len */
-
 export default {
     menu: {
-        about: 'О нас',
+        main: 'Главная',
         products: 'Продукция',
-        news: 'Новости',
-        buy: 'Где купить',
-        contacts: 'Контакты',
-        prices: 'Оптовый прайс-лист'
+        delivery: 'Доставка',
+        about: 'О нас',
+        advantages: 'Почему мы',
+        contacts: 'Контакти'
     },
     header: {
-        location: {
-            city: 'г.Киев, Украина',
-            shedule: 'Пн-Сб 10:00 - 18:00'
-        },
-        phone: '+38(050)-123-45-67'
+        nameCompany: 'ООО “ПКП “Укрпелетэкспорт”',
+        addressCompanyTop: 'с. Погребы, ул. Промышленная, 12',
+        addressCompanyBottom: 'Киевская обл., Броварской район',
+        phone: ['(097) 123-45-67','(066) 987-54-32']
     },
     footer: {
         title: 'Меню',

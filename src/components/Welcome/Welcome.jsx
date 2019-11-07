@@ -31,7 +31,7 @@ class Welcome extends Component {
     };
 
     componentDidMount () {
-        setTimeout(()=> window.google ? this.initMap() : alert('Не удалось подключить карту'), 0);
+        // setTimeout(()=> window.google ? this.initMap() : alert('Не удалось подключить карту'), 0);
     }
 
     initMap () {

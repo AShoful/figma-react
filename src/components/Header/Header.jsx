@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import propOr from '@tinkoff/utils/object/propOr';
 
 import { connect } from 'react-redux';
 import setLang from '../../store/actions/setLang';
@@ -14,22 +15,12 @@ import { MENU_ITEM } from '../../constants/routes'
 
 const LIST_ITEM_HEIGHT = 35;
 const LIST_ITEM_MARGIN = 35;
-const TEXTHEADER = {
-    ua: {
-        nameCompany: 'ТОВ "ВКП "Укрпелетекспорт"',
-        addressCompanyTop: 'с. Погреби, вул. Промислова, 12',
-        addressCompanyBottom: 'Київська обл., Броварський р-н.'
-    },
-    ru: {
-        nameCompany: 'ООО “ПКП “Укрпелетэкспорт”',
-        addressCompanyTop: 'с. Погребы, ул. Промышленная, 12',
-        addressCompanyBottom: 'Киевская обл., Броварской район'
-    }
-};
+
 const mapStateToProps = ({ application }) => {
     return {
         lang: application.lang,
-        langRoute: application.langRoute
+        langRoute: application.langRoute,
+        langMap: application.langMap
     };
 };
 
@@ -57,8 +48,7 @@ class Header extends Component {
 
         this.state = {
             langTipVisible: false,
-            menuVisible: false,
-            activeMenuItemIndex: 0
+            menuVisible: false
         };
     }
 
@@ -100,17 +90,14 @@ class Header extends Component {
         this.props.setLang(lang);
     };
 
-    handleLabelChecked = i => () => {
-        this.setState({
-            activeMenuItemIndex: i
-        }, () => this.handleMenuClose() );
-    };
-
     render () {
-        const { lang, langRoute } = this.props;
-        const { langTipVisible, menuVisible, activeMenuItemIndex } = this.state;
+        const { lang, langRoute, langMap } = this.props;
+        const { langTipVisible, menuVisible } = this.state;
         const langsContainerHeight = lang.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN);
         const menuContainerHeight = MENU_ITEM.length * (LIST_ITEM_HEIGHT + LIST_ITEM_MARGIN) + LIST_ITEM_MARGIN;
+        
+        const text = propOr('header', {}, langMap);
+        const menuItems = propOr('menu', {}, langMap);
 
         return <React.Fragment>
         <div className={styles.root}>
@@ -129,10 +116,11 @@ class Header extends Component {
                                     key={j}
                                     exact={link.exact}
                                     to={`${langRoute}${link.path}`}
-                                    onClick={this.handleLabelChecked(j)}
+                                    onClick={this.handleMenuClose}
                                     style={{ right: `${menuVisible ? 0 : 10}px`, transitionDelay: `${0.15 + j * 0.05}s` }}
-                                    className={classNames(styles.menuItem, { [styles.activeMenuItem]: j === activeMenuItemIndex })}>
-                                    <span className={styles.underline}>{link.name[lang]}</span>
+                                    activeClassName={styles.activeMenuItem}
+                                    className={styles.menuItem}>
+                                    {menuItems[link.id]}
                                 </NavLink>)
                         }
                     </div>
@@ -140,20 +128,20 @@ class Header extends Component {
                 <div className={styles.headerContent}>
                     <div className={styles.numbers}>
                         <a className={styles.phoneLink} href="tel:">
-                            <div> (097) 123-45-67</div>
+                            <div className={styles.phone}>{text.phone[0]}</div>
                         </a>
                         <a className={styles.phoneLink} href="tel:">
-                            <div> (066) 987-54-32</div>
+                            <div className={styles.phone}>{text.phone[1]}</div>
                         </a>
                     </div>
                     <div className={styles.contentWrap}>
-                        <div className={styles.title}>{TEXTHEADER[lang].nameCompany}</div>
+                        <div className={styles.title}>{text.nameCompany}</div>
                         <div className={styles.address}>
                             <a href="https://goo.gl/maps/QanLdGkYQouL3k7x9" target='_blank' rel="noopener noreferrer" className={styles.addressLink}>
-                                <div className={styles.addressDiv}>{TEXTHEADER[lang].addressCompanyTop}</div>
+                                <div className={styles.addressDiv}>{text.addressCompanyTop}</div>
                             </a>
                             <a href="https://goo.gl/maps/QanLdGkYQouL3k7x9" target='_blank' rel="noopener noreferrer" className={styles.addressLink}>
-                                <div className={styles.addressDiv}>{TEXTHEADER[lang].addressCompanyBottom}</div>
+                                <div className={styles.addressDiv}>{text.addressCompanyBottom}</div>
                             </a>
                         </div>
                         <div className={styles.langNav} onClick={this.handleLangBtnClick}>

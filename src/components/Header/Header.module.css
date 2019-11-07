@@ -107,14 +107,9 @@
     text-decoration: none;
 }
 
-.menuItem .underline {
-    display: inline-block;
-    padding-bottom: 3px;
-}
-
-.menuItem:hover .underline,
-.activeMenuItem .underline {
-    border-bottom: 2px solid brightOrange;
+.activeMenuItem, 
+.menuItem:hover{
+    color: brightOrange;
 }
 
 .headerContent{
@@ -135,6 +130,10 @@
     justify-content: space-between;
     width: 115px;
     max-height: 45px;
+}
+
+.phone{
+    text-align: left;
 }
 
 .title {
