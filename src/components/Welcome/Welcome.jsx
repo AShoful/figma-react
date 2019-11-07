@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import propOr from '@tinkoff/utils/object/propOr';
 
 import { connect } from 'react-redux';
 
@@ -7,31 +8,19 @@ import styles from './Welcome.module.css';
 
 import { COORDS_PELETEX } from '../../constants/constants';
 
-const TEXTS = {
-    ua: {
-        title: 'Завітайте до нас!',
-        titleButton: 'Прокласти\nмаршрут',
-        address: 'с. Погреби, вул.\nПромислова, 12\nКиївська обл.,\nБроварський р-н.'
-    },
-    ru: { title: 'Приезжайте к нам!',
-        titleButton: 'Проложить\nмаршрут',
-        address: 'с. Погребы, ул.\nПромышленная, 12\nКиевская обл.,\nБроварской район' }
-};
-
 const mapStateToProps = ({ application }) => {
     return {
-        langMap: application.langMap,
-        lang: application.lang
+        langMap: application.langMap
     };
 };
 
 class Welcome extends Component {
     static propTypes = {
-        lang: PropTypes.string
+        langMap: PropTypes.object.isRequired
     };
 
     componentDidMount () {
-        // setTimeout(()=> window.google ? this.initMap() : alert('Не удалось подключить карту'), 0);
+        setTimeout(()=> window.google ? this.initMap() : alert('Не удалось подключить карту'), 0);
     }
 
     initMap () {
@@ -82,16 +71,17 @@ class Welcome extends Component {
     }
 
     render () {
-        const { lang } = this.props;
+        const { langMap } = this.props;
+        const text = propOr('welcome', {}, langMap)
                 
         return <div className={styles.welcome} >
-            <div className={styles.title}>{TEXTS[lang].title}</div>
+            <div className={styles.title}>{text.title}</div>
             <div className={styles.wrap}>
                 <div className={styles.address}>
                     <button className={styles.addressButton} id='submit'>
-                        {TEXTS[lang].titleButton}
+                        {text.titleButton}
                     </button>
-                    <div className={styles.addressPlace}> {TEXTS[lang].address}</div>
+                    <div className={styles.addressPlace}> {text.address}</div>
                 </div>
             <div className={styles.map} id='map'/>
             </div>

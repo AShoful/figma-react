@@ -5,6 +5,8 @@ import propOr from '@tinkoff/utils/object/propOr';
 
 import { connect } from 'react-redux';
 
+import {img} from './img.js'
+
 import styles from './Advantages.module.css';
 
 const mapStateToProps = ({ application }) => {
@@ -47,14 +49,17 @@ class Advantages extends Component {
             <div className={classNames({ [styles.blur]: keyActiveClass !== -1 })} ></div>
             <div className={styles.wrap}>
                 {advantagesText.map((item, i) =>
-                    <div
-                        className={classNames(styles.advantage, { [styles.active]: keyActiveClass === i })}
-                        key={i}
+                    <div  key={i}
+                        className={classNames(styles.advantage, { [styles.active]: keyActiveClass === i })} 
                         onMouseEnter = {() => this.handleOnMouseEnter(i)}
                         onMouseLeave = {this.handleOnMouseLeave}>
-                        <img src= {item.imageSrc} alt={`img ${i}`} className={styles.advantageImg}/>
-                        <h3 className={styles.advantageTitle}>{item.texts.title}</h3>
-                        <div className={styles.advantageDescription}>{item.texts.description}</div>
+                        <img src= {img[i]} alt={`img ${i}`} className={styles.advantageImg}/>
+                        <h3 className={styles.advantageTitle}>
+                            {item.title}
+                        </h3>
+                        <div className={styles.advantageDescription}>
+                            {item.description}
+                        </div>
                     </div>)}
             </div>
         </div>;

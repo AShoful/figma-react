@@ -35,8 +35,8 @@ const lang = WrappedComponent => {
 
             const { lang } = this.props;
             const langMap = maps[lang] || maps[DEFAULT_LANG];
-            
-            this.props.setLangRoute(lang);
+
+            this.setLangRoute(lang);
             this.props.setLangMap(langMap);
         }
 

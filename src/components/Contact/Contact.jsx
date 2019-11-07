@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import propOr from '@tinkoff/utils/object/propOr';
 
 import { connect } from 'react-redux';
 
 import styles from './Contact.module.css';
 
-const TITLE = {
-    ua: 'Зв’язатися у зручний спосіб',
-    ru: 'Связаться с нами сейчас!'
-};
-
 const mapStateToProps = ({ application }) => {
     return {
-        lang: application.lang
+        langMap: application.langMap
     };
 };
 
 class Contact extends Component {
     static propTypes = {
-        lang: PropTypes.string
+        langMap: PropTypes.object.isRequired
     };
 
     render () {
-        const { lang } = this.props;
+        const { langMap } = this.props;
+        const text = propOr('contacts', {}, langMap) 
+
         return <div className={styles.contact} >
             <div className={styles.title}>
-                {TITLE[lang]}
+                {text.title}
             </div>
             <div className={styles.wrap}>
                 <div className={styles.boxs}>
