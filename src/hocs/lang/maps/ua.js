@@ -75,7 +75,7 @@ export default {
         title: 'Про нашу компанію'
     },
     contact: {
-        title: 'Телефонуйте (050) 1234567'
+        title: 'Телефонуйте'
     },
     delivery: {
         title: 'Замовити доставку'
