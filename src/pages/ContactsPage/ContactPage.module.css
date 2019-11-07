@@ -3,9 +3,9 @@
 
 .contact{
     width: 100%;
-    font-size: 60px;
+    font-size: 40px;
     color: darkOrange;
     text-align: center;
-    height: 100px;
+    min-height: 60px;
     font-family: RubikRegular;
 }
