@@ -1,9 +1,10 @@
-import { SET_LANG, SET_LANG_ROUTE, } from '../types/types';
+import { SET_LANG, SET_LANG_ROUTE, SET_LANG_MAP } from '../types/types';
 import { DEFAULT_LANG, DEFAULT_LANG_ROUTE } from '../../constants/constants';
 
 const initialState = {
     lang: DEFAULT_LANG,
-    langRoute: DEFAULT_LANG_ROUTE
+    langRoute: DEFAULT_LANG_ROUTE,
+    langMap: {}
 };
 
 export default function (state = initialState, action) {
@@ -11,7 +12,9 @@ export default function (state = initialState, action) {
     case SET_LANG:
         return { ...state, lang: action.payload };
     case SET_LANG_ROUTE:
-        return { ...state, langRoute: action.payload };    
+        return { ...state, langRoute: action.payload };
+    case SET_LANG_MAP:
+        return { ...state, langMap: action.payload };          
     default:
         return state;
     }

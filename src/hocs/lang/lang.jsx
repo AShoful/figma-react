@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-// import setLangMap from '../../../actions/setLangMap';
+import setLangMap from '../../store/actions/setLangMap';
 import setLangRoute from '../../store/actions/setLangRoute';
 
 import getLangRoute from '../../utils/getLangRoute';
 
-// import { DEFAULT_LANG } from '../../constants/constants';
+import { DEFAULT_LANG } from '../../constants/constants';
 
-// import maps from './maps';
+import maps from './maps';
 
 const mapStateToProps = ({ application }) => {
     return {
@@ -18,15 +18,15 @@ const mapStateToProps = ({ application }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    // setLangMap: payload => dispatch(setLangMap(payload)),
+    setLangMap: payload => dispatch(setLangMap(payload)),
     setLangRoute: payload => dispatch(setLangRoute(payload))
 });
 
 const lang = WrappedComponent => {
     class Lang extends PureComponent {
         static propTypes = {
-            // setLangMap: PropTypes.func.isRequired,
-            // setLangRoute: PropTypes.func.isRequired,
+            setLangMap: PropTypes.func.isRequired,
+            setLangRoute: PropTypes.func.isRequired,
             lang: PropTypes.string
         };
 
@@ -34,15 +34,20 @@ const lang = WrappedComponent => {
             super(...args);
 
             const { lang } = this.props;
-            // const langMap = maps[lang] || maps[DEFAULT_LANG];
-
+            const langMap = maps[lang] || maps[DEFAULT_LANG];
+            console.log(langMap)
             this.props.setLangRoute(lang);
-            // this.props.setLangMap(langMap);
+            this.props.setLangMap(langMap);
         }
 
         componentWillReceiveProps (nextProps) {
             if (nextProps.lang !== this.props.lang) {
-                this.setLangRoute(nextProps.lang);
+                const langMap = maps[nextProps.lang];
+
+                if (langMap) {
+                    this.props.setLangMap(langMap);
+                    this.setLangRoute(nextProps.lang);
+                }
             }
         }
 

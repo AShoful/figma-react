@@ -26,108 +26,19 @@ export default {
         },
         placeholder: 'Поиск'
     },
+    products: {
+        title: 'Продукция'
+    },
     about: {
-        title: 'О Компании',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus, eget commodo justo maximus non. Suspendisse sed tellus mi. Donec sem nulla, tristique ut libero eu, lacinia viverra orci. Vivamus ac porta arcu. Vestibulum a volutpat ex, ac molestie purus. Donec consectetur tortor nec molestie tempor. Aenean tristique velit ligula, eget egestas tortor maximus in.Vestibulum a volutpat ex, ac molestie purus. Donec consectetur tortor nec molestie tempor. Aenean tristique velit ligula, eget egestas tortor maximus in.',
-        buttonText: 'Подробнее'
+        title: 'О нашей компании'
     },
-    slider: {
-        title: 'Lorem ipsum',
-        description: 'Duis posuere efficitur libero eget semper.',
-        buttonText: 'Подробнее'
+    contact: {
+        title: 'Позвоните по тел. (050) 1234567'
     },
-    topics: {
-        topics: [
-            { title: 'Опыт', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.' },
-            { title: 'Развитие', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.' },
-            { title: 'Качество', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.' }
-        ]
+    delivery: {
+        title: 'Заказать доставку'
     },
-    distributors: {
-        title: 'Официальные дистрибьюторы',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper',
-        subtitle2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },
-    lastNews: {
-        title: 'Последние статьи',
-        articleContent: [
-            {
-                text: {
-                    ru: {
-                        title: 'Topic',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.'
-                    },
-                    ua: {
-                        title: 'Topic',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.'
-                    }
-                }
-            },
-            {
-                text: {
-                    ru: {
-                        title: 'Topic',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.'
-                    },
-                    ua: {
-                        title: 'Topic',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.'
-                    }
-                }
-            },
-            {
-                text: {
-                    ru: {
-                        title: 'Topic',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.'
-                    },
-                    ua: {
-                        title: 'Topic',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere efficitur libero eget semper. Cras vitae volutpat elit. Proin dapibus mollis risus.'
-                    }
-                }
-            }
-        ]
-    },
-    nav: {
-        menu: ['Главная', 'Про нас'],
-        main: 'Главная'
-    },
-    aboutCompany: {
-        title: 'О компании ',
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Mauris vitae eros eu tellus facilisis euismod ut commodo erat.
-      Mauris convallis aliquam tortor. Mauris at odio sed dui rutrum lacinia.
-      Maecenas malesuada, mi vitae ullamcorper facilisis, sem velit aliquet arcu, quis interdum lorem augue at eros.
-      Aliquam magna tortor, commodo sed scelerisque vel, cursus non elit.
-      Proin mi lacus, congue vitae ipsum id, tincidunt efficitur sem. Cras ut erat vel neque mollis rutrum.
-      In ornare, dolor sit amet scelerisque egestas, eros ante pharetra turpis, a congue lacus neque ut mauris.
-      Etiam elementum tristique mattis. Ut commodo ipsum eu neque tincidunt, sit amet posuere lectus elementum. Nunc porttitor lacus id aliquam eleifend. Etiam tempor ultricies auctor. Mauris interdum, orci id fermentum aliquet, justo enim faucibus nisl, tempus porta arcu nulla ac tortor.
-      Vestibulum velit enim, semper pellentesque velit eget, eleifend vulputate nisl. Mauris tempus tempor pulvinar. Vivamus quis faucibus odio. Vestibulum tincidunt a risus at vulputate. Aliquam ullamcorper dictum ullamcorper. Quisque nec nulla neque. Proin rutrum purus arcu, et facilisis justo pretium id. Ut eget porttitor magna, a accumsan ligula. Suspendisse gravida, erat quis ornare bibendum, libero nisl efficitur felis, vel sodales ante justo in mauris. Vestibulum at ex bibendum justo lacinia condimentum.
-      Cras blandit semper ligula, vel tempus nulla tincidunt a. Aenean nibh tortor, porttitor ut tristique ac, accumsan eget leo. Cras porttitor fermentum ultrices. Nulla eu imperdiet enim, a elementum ligula. Maecenas a dolor auctor lectus fermentum facilisis sed eget massa. Maecenas luctus lobortis velit, non pellentesque urna posuere molestie. In pretium ipsum enim, ac lobortis ante varius et. Duis ut ipsum odio.`
-    },
-    productsPhotos: {
-        title: 'Каталог товаров'
-    },
-    contacts: {
-        title: 'Компания “Matratex”',
-        contactInfo: {
-            city: 'г.Киев, Украина',
-            phone: '+380(55)-123-45-67',
-            shedule: 'Пн-Сб 10:00 - 18:00'
-        }
-    },
-    priceList: {
-        title: '[ru] Предоставляем наш прайс-лист для ознакомления.',
-        buttonText: 'Скачать'
-    },
-    buy: {
-        title: 'Компания “МЕБЕЛЬ МАРКЕТ”',
-        description: 'Официальный дистрибьютор фабрики матрасов "Matratex" в г. Киев и Киевской области. ',
-        contactInfo: {
-            city: 'г.Киев, Украина',
-            phone: '+380(55)-123-45-67',
-            shedule: 'Пн-Сб 10:00 - 18:00'
-        }
+    advantages: {
+        title: 'Наши преймущества'
     }
 };

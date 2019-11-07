@@ -1,0 +1,11 @@
+@value colors: '../../css/colors.css';
+@value darkOrange from colors;
+
+.about{
+    width: 100%;
+    font-size: 60px;
+    color: darkOrange;
+    text-align: center;
+    height: 100px;
+    font-family: RubikRegular;
+}

@@ -5,14 +5,21 @@ import PropTypes from 'prop-types';
 
 import Header from './components/Header/Header'
 import outsideClick from './hocs/outsideClick'
-import lang from './hocs/lang/lang.jsx';
 import {DEFAULT_LANG} from './constants/constants'
+
 import MainPage from './pages/MainPage/MainPage'
+import ProductsPage from './pages/ProductsPage/ProductsPage'
+import AboutPage from './pages/AboutPage/AboutPage'
+import ContactsPage from './pages/ContactsPage/ContactsPage'
+import AdvantagesPage from './pages/AdvantagesPage/AdvantagesPage'
+import DeliveryPage from './pages/DeliveryPage/DeliveryPage'
 import Page404 from './pages/Page404/Page404'
 import Footer from './components/Footer/Footer'
+
 import getLangRouteParts from './utils/getLangRouteParts'
 
 import './App.css';
+
 
 const HeaderOutsideClick = outsideClick(Header)
 
@@ -41,20 +48,23 @@ class App extends Component {
       }
       const { lang, langRoute } = this.props;
       const { routeWithoutLang } = getLangRouteParts(pathname);
-      console.log(routeWithoutLang, langUrl)
-
+      
       return lang === langUrl ? <Component /> : <Redirect to={`${langRoute}${routeWithoutLang}`} />;
   };
 
   render () {
-      console.log(this.props)
+
     return (
         <div className="App">
           <HeaderOutsideClick/>
           <div className="pageContent">
             <Switch>
-                <Route exact path = '/:lang(ru)?' render = {this.renderComponent( MainPage, lang)} />
-                <Route exact path = '/products' render = {this.renderComponent( Page404, lang)} />
+                <Route exact path = '/:lang(ru)?' render = {this.renderComponent(MainPage)} />
+                <Route exact path = '/:lang(ru)?/products' render = {this.renderComponent(ProductsPage)} />
+                <Route exact path = '/:lang(ru)?/delivery' render = {this.renderComponent(DeliveryPage)} />
+                <Route exact path = '/:lang(ru)?/about' render = {this.renderComponent(AboutPage)} />
+                <Route exact path = '/:lang(ru)?/advantages' render = {this.renderComponent(AdvantagesPage)} />
+                <Route exact path = '/:lang(ru)?/contacts' render = {this.renderComponent(ContactsPage)} />
                 <Route component={Page404} />
             </Switch>
           </div>
