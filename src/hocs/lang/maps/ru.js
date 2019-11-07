@@ -24,6 +24,11 @@ export default {
         },
         placeholder: 'Поиск'
     },
+    description:{
+        title: 'ПЕЛЛЕТЫ ТОПЛИВНЫЕ',
+        subtitle: '100% древесина',
+        text: 'Диаметр 8 мм'
+    },
     products: {
         title: 'Продукция'
     },

@@ -25,6 +25,11 @@ export default {
         },
         placeholder: 'Пошук'
     },
+    description:{
+        title: 'Пелети паливні',
+        subtitle: '100 %  деревина',
+        text: 'Діаметр 8 мм'
+    },
     products: {
         title: 'Продукція'        
     },
