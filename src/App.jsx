@@ -60,6 +60,7 @@ class App extends Component {
           <div className="pageContent">
             <Switch>
                 <Route exact path = '/:lang(ru)?' render = {this.renderComponent(MainPage)} />
+                <Route exact path = '/:lang(ru)?/figma-react' render = {this.renderComponent(MainPage)} />
                 <Route exact path = '/:lang(ru)?/products' render = {this.renderComponent(ProductsPage)} />
                 <Route exact path = '/:lang(ru)?/delivery' render = {this.renderComponent(DeliveryPage)} />
                 <Route exact path = '/:lang(ru)?/about' render = {this.renderComponent(AboutPage)} />
