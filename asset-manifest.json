@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/figma-react/static/css/main.6f108d2f.chunk.css",
+    "main.css": "/figma-react/static/css/main.e2c00400.chunk.css",
     "main.js": "/figma-react/static/js/main.91be56a7.chunk.js",
     "main.js.map": "/figma-react/static/js/main.91be56a7.chunk.js.map",
     "runtime-main.js": "/figma-react/static/js/runtime-main.3f2c5e5f.js",
@@ -8,9 +8,9 @@
     "static/js/2.fd619bd0.chunk.js": "/figma-react/static/js/2.fd619bd0.chunk.js",
     "static/js/2.fd619bd0.chunk.js.map": "/figma-react/static/js/2.fd619bd0.chunk.js.map",
     "index.html": "/figma-react/index.html",
-    "precache-manifest.5724c9785a3d6ee25309bde3c1703154.js": "/figma-react/precache-manifest.5724c9785a3d6ee25309bde3c1703154.js",
+    "precache-manifest.55e611373f07a211f91b166e3031f85c.js": "/figma-react/precache-manifest.55e611373f07a211f91b166e3031f85c.js",
     "service-worker.js": "/figma-react/service-worker.js",
-    "static/css/main.6f108d2f.chunk.css.map": "/figma-react/static/css/main.6f108d2f.chunk.css.map",
+    "static/css/main.e2c00400.chunk.css.map": "/figma-react/static/css/main.e2c00400.chunk.css.map",
     "static/media/index.css": "/figma-react/static/media/Rubik-Regular.35af6dbe.ttf",
     "static/media/Description.module.css": "/figma-react/static/media/RectangleMobile.49a4ae60.png",
     "static/media/Welcome.module.css": "/figma-react/static/media/Rectangle.bcd38194.png",
