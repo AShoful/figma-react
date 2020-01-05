@@ -37,7 +37,8 @@
     width: 46px;
     height: 46px;
     border: 1px solid rgba(216, 99, 15, 0.76);
-    border-radius: 50%;  
+    border-radius: 50%; 
+    outline: none;    
 }
 
 .left{
