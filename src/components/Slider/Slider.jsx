@@ -49,7 +49,6 @@ class Slider extends Component {
 
     render () {
         const { sliderIndex, sliderWidth } = this.state;
-        
         return <div className={styles.slider} >
             <div className={styles.sliderTrack} style = {{ left: `${-sliderIndex * sliderWidth}px` }}>
                 { SLIDER.map((slide, i) => <div key={i}
@@ -63,7 +62,6 @@ class Slider extends Component {
             <div className={styles.toggle}>
                 <button
                     className={styles.left}
-                    // disabled = {sliderIndex === 0}
                     onClick={() => this.handleOnclickToggle(-1)}
                 />
                 <button
