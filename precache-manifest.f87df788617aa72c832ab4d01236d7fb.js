@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "27bdc8b15cad542ba8e1dacbdb7a3f0f",
+    "revision": "af0caf010a61b8a5cac4264c5fac7fa2",
     "url": "/figma-react/index.html"
   },
   {
-    "revision": "2f3694692966a6627a27",
+    "revision": "eb33ef7d30a6fdac0230",
     "url": "/figma-react/static/css/main.f83f4e45.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/figma-react/static/js/2.fd619bd0.chunk.js"
   },
   {
-    "revision": "2f3694692966a6627a27",
-    "url": "/figma-react/static/js/main.91967fd0.chunk.js"
+    "revision": "eb33ef7d30a6fdac0230",
+    "url": "/figma-react/static/js/main.5ff4fbec.chunk.js"
   },
   {
     "revision": "8728077aca8e07707e4c",
